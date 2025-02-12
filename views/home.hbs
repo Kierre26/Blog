@@ -1,0 +1,44 @@
+<h1 class="text-center">My Blog</h1>
+
+<!-- Form container -->
+<div class="container d-flex justify-content-center">
+  <div class="form-container">
+    <h2 class="text-center">Add a New Post</h2>
+    {{!-- Send form data to /add when submitted --}}
+    <form action="/add" method="POST" class="custom-form">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="content">Content</label>
+        <textarea name="content" id="content" class="form-control" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Add Post</button>
+    </form>
+  </div>
+</div>
+
+<hr>
+
+<!-- Blog Posts Section -->
+<h2 class="text-center">All Posts</h2>
+<div class="container">
+  <div class="row">
+    {{!-- Loop through posts array and create a new card for each --}}
+    {{#each posts}}
+    <div class="col-md-6 col-lg-4 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            <a href="/post/{{this.id}}" class="post-link">{{this.title}}</a>
+          </h5>
+          <p class="card-text text-muted">{{this.timestamp}}</p>
+          {{!-- Links to full post --}}
+          <a href="/post/{{this.id}}" class="btn btn-outline-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

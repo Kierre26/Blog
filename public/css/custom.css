@@ -1,0 +1,25 @@
+.btn-primary {
+    background-color: #14c92f;
+    border-color: #14c92f;
+}
+
+.navbar {
+    background-color: #672fc7;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e1dede; 
+}
+
+.btn-secondary {
+    background-color: #14c92f;  
+    border-color: #14c92f;
+    color: white;  
+}
+
+.btn-secondary:hover {
+    background-color: #3270b2;
+    border-color: #3270b2;
+}
+
